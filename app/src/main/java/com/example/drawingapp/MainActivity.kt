@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             binding.drawingView.redo()
         }
         binding.clearBtn.setOnClickListener {
+            binding.drawingBgImg.setImageURI(null)
             binding.drawingView.clear()
         }
         binding.saveBtn.setOnClickListener {

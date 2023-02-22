@@ -102,7 +102,7 @@ class DrawingView(context: Context,attr:AttributeSet): View(context,attr) {
     }
 
     fun clear(){
-        undoStack.addAll(pathList.reversed())
+        undoStack.clear()
         pathList.clear()
         invalidate()
     }
@@ -119,6 +119,9 @@ class DrawingView(context: Context,attr:AttributeSet): View(context,attr) {
         brushColor = color
         mDrawPath?.color = brushColor
     }
+
+    fun pathCount() = pathList.size
+    fun redoPathCount() = undoStack.size
 
     fun getBrushSize():Float = originalBrushSize
     fun getBrushColor():Int = brushColor
